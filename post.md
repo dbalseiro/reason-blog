@@ -1,23 +1,24 @@
 # Functional Programming with ReasonML (working title)
 
-# LAYOUT
+## LAYOUT
 
 * What is ReasonML
     * History of the language
     * OCaml
 * Functional Stuff
     * Type system
-    * Type inference
-    * Differences with typescript
+      * Type inference
+      * Differences with typescript
     * Inmutability
-    * Mutable
-    * Imperative functions
-    * Pure Functions
-    * Currying
-    * Pattern Matching / Destructuring
-    * Recursive functions
-    * JS Interop
-    * Parametric polimorphism
+      * Mutable
+      * Imperative functions
+    * Functions
+      * Currying
+      * Recursive functions
+      * Pattern Matching / Destructuring
+      * Parametric polimorphism
 * Reason React
     * JSX
     * Bindings
+    * JS Interop
+
