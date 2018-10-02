@@ -2,17 +2,14 @@ open Types;
 
 let component = ReasonReact.statelessComponent("TodoItem");
 
-let style = completed =>
-  if (completed) {
-    ReactDOMRe.Style.make(~textDecoration="line-through", ());
-  } else {
-    ReactDOMRe.Style.make(~fontWeight="bold", ());
-  };
+let itemClass = completed => completed ? "completed" : "active";
 
 let make = (~todo, ~onClick, _) => {
   ...component,
   render: _self =>
-    <li onClick=((_) => onClick(todo.id)) style=style(todo.completed)>
+    <li
+      onClick=((_) => onClick(todo.id))
+      className=(itemClass(todo.completed))>
       (ReasonReact.string(todo.text))
     </li>,
 };
