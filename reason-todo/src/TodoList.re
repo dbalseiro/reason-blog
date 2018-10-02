@@ -8,23 +8,21 @@ type action =
   | AddTodo(string)
   | ToggleTodo(int);
 
+let refId = ref(0);
+
+let nextId = () => {
+  refId := refId^ + 1;
+  refId^;
+};
+
+let mkTodo = text => {id: nextId(), text, completed: false};
+
 let reducer = (action, state) =>
   switch (action) {
-  | AddTodo(text) =>
-    ReasonReact.Update([
-      {id: List.length(state) + 1, text, completed: false},
-      ...state,
-    ])
+  | AddTodo(text) => ReasonReact.Update([mkTodo(text), ...state])
   | ToggleTodo(id) =>
     ReasonReact.Update(
-      state
-      |> List.map(t =>
-           if (t.id == id) {
-             {...t, completed: ! t.completed};
-           } else {
-             t;
-           }
-         ),
+      List.map(t => t.id == id ? {...t, completed: ! t.completed} : t, state),
     )
   };
 
