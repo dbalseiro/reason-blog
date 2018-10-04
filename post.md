@@ -1,54 +1,26 @@
-# IDEAS
+## ReasonML vs Typescript
 
-* What is ReasonML
-    * History of the language
-    * OCaml
-* Functional Stuff
-    * Type system
-      * Type inference
-      * Differences with typescript
-    * Inmutability
-      * Mutable
-      * Imperative functions
-    * Functions
-      * Currying
-      * Recursive functions
-      * Pattern Matching / Destructuring
-      * Parametric polimorphism
-* Reason React
-    * JSX
-    * Bindings
-    * JS Interop
+TypeScript and ReasonML are two technologies that bring type safety to JavaScript. We will explore them.
 
+This is not a how to program tutorial nor it is an TODO tutorial of the languages... We aim to benchmark both technologies and point out the differences...
 
-# Working Title
-
-## Functional Programming with ReasonML
 
 ### What is ReasonML?
 
-In its [homepage](https://reasonml.github.io/en/) they say that Reason
-_lets you write simple, fast and quality type safe code while leveraging both the JavaScript & OCaml ecosystems._
-let's start by the end of that sentence. What is that _OCaml_ thing? _OCaml_ is a **mature (over 20 years), functional** language with
-a strong type system and an awesome type inference engine. The OCaml compiler is fast (absurdly fast) and the language
-has an effective metaprogramming system that allows to extend the language in many ways. 
+It is a new language created byFacebook and according to its  [homepage](https://reasonml.github.io/en/) _Reason lets you write simple, fast and quality type safe code while leveraging both the JavaScript & OCaml ecosystems._ 
 
-ReasonML is an OCaml dialect that resembles JS (and supports JSX!!), but it is not JS nor is a superset of javascript. it is an entirely new 
-like tupescript
+Let's start by the end that sentence. What is _OCaml_? _OCaml_ is a **mature (over 20 years), functional language with a strong type system and an awesome type inference engine**.
 
-language. In fact, Reason files
-are first transformed to OCaml ASTs first and then transpiled to JS with Buclescript.
+The OCaml compiler is fast (absurdly fast) and the language has an effective metaprogramming system that allows to extend the language in many ways. 
 
-ReasonML can interop with JS, so it's possible to use any library from the JS ecosystem. There are many bindings for the most popular JS libraries
-but it's easy to create your own bindings for any library in `npm`
+ReasonML is an OCaml dialect that resembles JS (and supports JSX!!), but it is not JS nor is a superset of javascript it is an entirely new language. In fact, Reason files are first transformed to OCaml ASTs first and then transpiled to JS with Buclescript.
 
-Backed by Facebook
+ReasonML can interop with JS, so it's possible to use any library from the JS ecosystem. There are many bindings for the most popular JS libraries but it's easy to create your own bindings for any library in `npm`
 
-### Why should I care?
+### What about Typescript?
 
-The current trend in the JS world is to use frameworks that enhace JS type system (TypeScript, Flow) or give JS a more functional flavor (Ramda, Sanctuary)
-Reason is a language that come with both out of the box
+TypeScript is a superset of javascript created by Microsoft. The syntax is tha sae as javascript but includes type anotation to make static check to the code
+
 
 ### Shut up and give me an example
 
-I'm thinking about give an example in reason and the same in typescript... point all the differences (type inference mainly) and benchmark them
