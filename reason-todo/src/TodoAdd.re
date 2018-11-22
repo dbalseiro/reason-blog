@@ -1,15 +1,15 @@
 let make = (~onAdd, _) => {
   ...ReasonReact.reducerComponent("TodoAdd"),
-  initialState: (_) => "",
-  reducer: (newState, _) => ReasonReact.Update(newState),
+  initialState: _ => "",
+  reducer: (todoText, _) => ReasonReact.Update(todoText),
   render: self =>
     <div>
-      <form onSubmit=(evt => evt |> ReactEvent.Form.preventDefault)>
+      <form onSubmit=ReactEvent.Form.preventDefault>
         <input
           type_="text"
-          onChange=(evt => (evt |> ReactEvent.Form.target)##value |> self.send)
+          onChange={evt => (evt |> ReactEvent.Form.target)##value |> self.send}
         />
-        <input type_="submit" onClick=((_) => onAdd(self.state)) />
+        <input type_="submit" onClick={_ => onAdd(self.state)} />
       </form>
     </div>,
 };

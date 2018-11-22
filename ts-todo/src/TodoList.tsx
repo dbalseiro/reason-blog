@@ -61,7 +61,6 @@ export function reducer(state: State, action: Action): State {
 function TodoListComponent ({todos, onAdd, onToggle}: Props) {
   return (
     <ul>
-      {todos.map(todo => return (<li>{todo.text}</li>))}
     </ul>
   )
 }

@@ -12,7 +12,7 @@ let style = completed =>
 let make = (~todo, ~onClick, _) => {
   ...component,
   render: _self =>
-    <li onClick=((_) => onClick(todo.id)) style=style(todo.completed)>
-      (ReasonReact.string(todo.text))
+    <li onClick={_ => onClick(todo.id)} style={style(todo.completed)}>
+      {ReasonReact.string(todo.text)}
     </li>,
 };

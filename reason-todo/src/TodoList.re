@@ -2,7 +2,7 @@ open Types;
 
 type state = list(todo);
 
-let initialState = (_) => [];
+let initialState = _ => [];
 
 type action =
   | AddTodo(string)
@@ -22,27 +22,27 @@ let reducer = (action, state) =>
   | AddTodo(text) => ReasonReact.Update([mkTodo(text), ...state])
   | ToggleTodo(id) =>
     ReasonReact.Update(
-      List.map(t => t.id == id ? {...t, completed: ! t.completed} : t, state),
+      List.map(t => t.id == id ? {...t, completed: !t.completed} : t, state),
     )
   };
 
 let render = ({ReasonReact.state, ReasonReact.send}) =>
   <div>
-    <TodoAdd onAdd=(text => send(AddTodo(text))) />
+    <TodoAdd onAdd={text => send(AddTodo(text))} />
     <ul>
-      (
+      {
         List.map(
           todo =>
             <TodoItem
               todo
-              key=(string_of_int(todo.id))
-              onClick=(id => send(ToggleTodo(id)))
+              key={string_of_int(todo.id)}
+              onClick={id => send(ToggleTodo(id))}
             />,
           state,
         )
         |> Array.of_list
         |> ReasonReact.array
-      )
+      }
     </ul>
   </div>;
 
